@@ -1,0 +1,16 @@
+const express = require('express');
+
+const server= express();
+
+server.use((req,res,next)=>{
+console.log("In first middleware");
+res.send("hello")
+next();
+})
+
+server.use((req,res,next)=>{
+    console.log("In second middleware");
+    
+})
+
+server.listen('3000');
